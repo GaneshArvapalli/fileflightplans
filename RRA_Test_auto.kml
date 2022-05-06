@@ -1,0 +1,72 @@
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document id="RRA_Test_2.kml">
+    <visibility>1</visibility>
+    <Folder>
+      <name>Bounds</name>
+      <visibility>1</visibility>
+      <Placemark>
+        <name>Red Bounds</name>
+        <visibility>1</visibility>
+        <Style>
+          <LineStyle>
+            <color>ff0000ff</color>
+            <width>4</width>
+          </LineStyle>
+          <PolyStyle>
+            <fill>0</fill>
+            <outline>1</outline>
+          </PolyStyle>
+        </Style>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-77.738074,38.531419,0.000000 -77.741831,38.530274,0.000000 -77.742503,38.529258,0.000000 -77.742002,38.527880,0.000000 -77.737123,38.529048,0.000000 -77.736805,38.529619,0.000000 -77.737002,38.530162,0.000000 -77.736637,38.530460,0.000000 -77.738074,38.531419,0.000000</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>Yellow Bounds</name>
+        <visibility>1</visibility>
+        <Style>
+          <LineStyle>
+            <color>ff00ffff</color>
+            <width>4</width>
+          </LineStyle>
+          <PolyStyle>
+            <fill>0</fill>
+            <outline>1</outline>
+          </PolyStyle>
+        </Style>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-77.738076,38.531193 -77.741822,38.530052 -77.742386,38.529198 -77.741990,38.528108 -77.737133,38.529271 -77.736915,38.529662 -77.737139,38.530278 -77.736943,38.530438 -77.738076,38.531193</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+      <Placemark>
+        <name>Green Bounds</name>
+        <visibility>1</visibility>
+        <Style>
+          <LineStyle>
+            <color>ff00ff00</color>
+            <width>4</width>
+          </LineStyle>
+          <PolyStyle>
+            <fill>0</fill>
+            <outline>1</outline>
+          </PolyStyle>
+        </Style>
+        <Polygon>
+          <outerBoundaryIs>
+            <LinearRing>
+              <coordinates>-77.737066,38.530429 -77.738076,38.531103 -77.741818,38.529963 -77.742340,38.529174 -77.741985,38.528199 -77.737137,38.529360 -77.736959,38.529679 -77.737194,38.530324 -77.737066,38.530429</coordinates>
+            </LinearRing>
+          </outerBoundaryIs>
+        </Polygon>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
