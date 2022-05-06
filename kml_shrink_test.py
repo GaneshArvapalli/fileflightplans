@@ -103,3 +103,18 @@ f.append(gp)
 
 with open(outfile, 'w', encoding="utf-8") as myfile:
     myfile.write(k.to_string(prettyprint=True))
+
+
+## To get image: https://stackoverflow.com/questions/63708705/python-convert-kml-to-image-file
+# import geopandas as gpd
+# import matplotlib.pyplot as plt
+# gpd.io.file.fiona.drvsupport.supported_drivers['KML'] = 'rw'
+
+
+# # Filepath to KML file
+# fp = "history.kml"
+
+# polys = gpd.read_file(fp, driver='KML')
+# print(polys)
+# polys.plot()
+# plt.savefig('test.jpg')
