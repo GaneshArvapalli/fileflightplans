@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>F*** Flight Plans</title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'kml/style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>
+            F*** Flight Plans Right Now and Right Here!
+        </h1>
+        {% block content %}
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="OK">
+        </form>
+        {% endblock %}
+    </body>
+</html>
