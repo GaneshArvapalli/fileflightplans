@@ -10,4 +10,4 @@ def validate_file_extension(value):
 
 class UploadFileForm(forms.Form):
     file = forms.FileField(validators=[validate_file_extension])
-    max_speed = forms.FloatField()
+    max_speed = forms.FloatField(label="Max Speed (in m/s)")

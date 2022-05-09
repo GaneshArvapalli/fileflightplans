@@ -5,6 +5,7 @@ import numpy as np
 from shapely.geometry import Point, LineString, Polygon
 from fastkml import kml, styles
 from pyproj import Proj, Transformer
+import pdb
 
 
 # Read in KML file
@@ -19,6 +20,7 @@ with open(kml_file, 'rt', encoding="utf-8") as myfile:
     k.from_string(bytes(doc, encoding='utf8'))
 
 # Get the boundary geometry
+# pdb.set_trace()
 features = list(k.features())
 f2 = list(features[0].features())
 red_bounds = f2[0].geometry
@@ -77,7 +79,7 @@ ns = '{http://www.opengis.net/kml/2.2}'
 d = kml.Document(ns, 'RRA_Test_2.kml')
 k.append(d)
 f = kml.Folder(ns=ns, name='Bounds')
-d.append(f)
+# d.append(f)
 
 ls = styles.LineStyle(ns, color='ff0000ff', width=4)
 ps = styles.PolyStyle(ns, fill=0)
@@ -97,9 +99,9 @@ s = styles.Style(styles=[ls,ps])
 gp = kml.Placemark(ns=ns, name='Green Bounds', styles=[s])
 gp.geometry = green_ge_polygon
 
-f.append(rp)
-f.append(yp)
-f.append(gp)
+d.append(rp)
+d.append(yp)
+d.append(gp)
 
 with open(outfile, 'w', encoding="utf-8") as myfile:
     myfile.write(k.to_string(prettyprint=True))

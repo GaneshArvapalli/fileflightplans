@@ -1,72 +1,68 @@
 <kml xmlns="http://www.opengis.net/kml/2.2">
   <Document id="RRA_Test_2.kml">
     <visibility>1</visibility>
-    <Folder>
-      <name>Bounds</name>
+    <Placemark>
+      <name>Red Bounds</name>
       <visibility>1</visibility>
-      <Placemark>
-        <name>Red Bounds</name>
-        <visibility>1</visibility>
-        <Style>
-          <LineStyle>
-            <color>ff0000ff</color>
-            <width>4</width>
-          </LineStyle>
-          <PolyStyle>
-            <fill>0</fill>
-            <outline>1</outline>
-          </PolyStyle>
-        </Style>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>-75.421816,43.248964,0.000000 -75.426962,43.249388,0.000000 -75.430431,43.246641,0.000000 -75.428559,43.243270,0.000000 -75.424857,43.242424,0.000000 -75.423058,43.237573,0.000000 -75.420381,43.235674,0.000000 -75.413427,43.231451,0.000000 -75.406403,43.228177,0.000000 -75.395387,43.221417,0.000000 -75.390817,43.218494,0.000000 -75.384978,43.216395,0.000000 -75.382545,43.218757,0.000000 -75.385107,43.222266,0.000000 -75.394416,43.229350,0.000000 -75.398041,43.229870,0.000000 -75.398904,43.231417,0.000000 -75.398352,43.232196,0.000000 -75.409028,43.238405,0.000000 -75.421816,43.248964,0.000000</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-      <Placemark>
-        <name>Yellow Bounds</name>
-        <visibility>1</visibility>
-        <Style>
-          <LineStyle>
-            <color>ff00ffff</color>
-            <width>4</width>
-          </LineStyle>
-          <PolyStyle>
-            <fill>0</fill>
-            <outline>1</outline>
-          </PolyStyle>
-        </Style>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>-75.399319,43.231818 -75.409069,43.237489 -75.421842,43.248036 -75.426941,43.248455 -75.429671,43.246294 -75.428502,43.244189 -75.424779,43.243338 -75.422968,43.238454 -75.420342,43.236592 -75.413396,43.232374 -75.406371,43.229099 -75.395350,43.222336 -75.390788,43.219418 -75.384996,43.217336 -75.383375,43.218909 -75.385168,43.221365 -75.394443,43.228423 -75.398096,43.228947 -75.399530,43.231520 -75.399319,43.231818</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-      <Placemark>
-        <name>Green Bounds</name>
-        <visibility>1</visibility>
-        <Style>
-          <LineStyle>
-            <color>ff00ff00</color>
-            <width>4</width>
-          </LineStyle>
-          <PolyStyle>
-            <fill>0</fill>
-            <outline>1</outline>
-          </PolyStyle>
-        </Style>
-        <Polygon>
-          <outerBoundaryIs>
-            <LinearRing>
-              <coordinates>-75.399706,43.231667 -75.409085,43.237122 -75.421853,43.247664 -75.426933,43.248082 -75.429367,43.246155 -75.428479,43.244556 -75.424748,43.243704 -75.422932,43.238807 -75.420327,43.236959 -75.413384,43.232742 -75.406358,43.229468 -75.395335,43.222704 -75.390776,43.219788 -75.385003,43.217712 -75.383707,43.218970 -75.385192,43.221005 -75.394453,43.228052 -75.398118,43.228578 -75.399781,43.231561 -75.399706,43.231667</coordinates>
-            </LinearRing>
-          </outerBoundaryIs>
-        </Polygon>
-      </Placemark>
-    </Folder>
+      <Style>
+        <LineStyle>
+          <color>ff0000ff</color>
+          <width>4</width>
+        </LineStyle>
+        <PolyStyle>
+          <fill>0</fill>
+          <outline>1</outline>
+        </PolyStyle>
+      </Style>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-75.421816,43.248964,0.000000 -75.426962,43.249388,0.000000 -75.430431,43.246641,0.000000 -75.428559,43.243270,0.000000 -75.424857,43.242424,0.000000 -75.423058,43.237573,0.000000 -75.420381,43.235674,0.000000 -75.413427,43.231451,0.000000 -75.406403,43.228177,0.000000 -75.395387,43.221417,0.000000 -75.390817,43.218494,0.000000 -75.384978,43.216395,0.000000 -75.382545,43.218757,0.000000 -75.385107,43.222266,0.000000 -75.394416,43.229350,0.000000 -75.398041,43.229870,0.000000 -75.398904,43.231417,0.000000 -75.398352,43.232196,0.000000 -75.409028,43.238405,0.000000 -75.421816,43.248964,0.000000</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Yellow Bounds</name>
+      <visibility>1</visibility>
+      <Style>
+        <LineStyle>
+          <color>ff00ffff</color>
+          <width>4</width>
+        </LineStyle>
+        <PolyStyle>
+          <fill>0</fill>
+          <outline>1</outline>
+        </PolyStyle>
+      </Style>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-75.421820,43.248830 -75.426959,43.249252 -75.430321,43.246591 -75.428551,43.243403 -75.424846,43.242556 -75.423045,43.237700 -75.420375,43.235807 -75.413423,43.231585 -75.406398,43.228310 -75.395381,43.221550 -75.390813,43.218628 -75.384980,43.216532 -75.382665,43.218779 -75.385116,43.222136 -75.394420,43.229216 -75.398049,43.229736 -75.398995,43.231432 -75.398492,43.232141 -75.409034,43.238273 -75.421820,43.248830</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Green Bounds</name>
+      <visibility>1</visibility>
+      <Style>
+        <LineStyle>
+          <color>ff00ff00</color>
+          <width>4</width>
+        </LineStyle>
+        <PolyStyle>
+          <fill>0</fill>
+          <outline>1</outline>
+        </PolyStyle>
+      </Style>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>-75.421821,43.248776 -75.426957,43.249198 -75.430277,43.246571 -75.428547,43.243456 -75.424842,43.242609 -75.423040,43.237751 -75.420373,43.235860 -75.413421,43.231638 -75.406396,43.228364 -75.395379,43.221603 -75.390811,43.218682 -75.384981,43.216586 -75.382713,43.218788 -75.385119,43.222084 -75.394422,43.229162 -75.398052,43.229683 -75.399031,43.231438 -75.398548,43.232119 -75.409036,43.238220 -75.421821,43.248776</coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
   </Document>
 </kml>

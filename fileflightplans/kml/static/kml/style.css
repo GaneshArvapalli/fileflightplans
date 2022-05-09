@@ -1,9 +1,51 @@
-h1 {
-    padding-top: 5em;
+* {
+    font-family: 'Raleway', serif;
+}
+
+a, a:link, a:hover, a:active {
     color: rgb(212, 0, 255);
     text-align: center;
 }
 
-form {
+h1 {
+    padding-top: 2em;
+    font-size: 60px;
+    color: rgb(212, 0, 255);
     text-align: center;
+}
+
+p, h3 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ta-center {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td {
+    padding: 10px;
+}
+
+form, table {
+    text-align: center;
+}
+
+.example {
+    padding-top: 2em;
+}
+
+img {
+    max-height: 300px;
+    width: 100%;
+    object-fit: contain;
 }

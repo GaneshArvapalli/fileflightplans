@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>F*** Flight Plans - Proper Formatting</title>
+        {% load static %}
+
+        <link rel="stylesheet" type="text/css" href="{% static 'kml/style.css' %}">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Raleway">
+        <link rel="stylesheet" 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+            crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>
+            <a href="/">F*** Flight Plans... Properly!</a>
+        </h1>
+        <p>
+            Hey! If you're seeing this, it means that you probably messed up your KML file somehow.
+        </p>
+        <p>
+            It should look something like this:
+        </p>
+        <div class="ta-center">
+        <textarea rows="20" cols="70">
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+    <name>RME_Test.kml</name>
+    <StyleMap id="msn_ylw-pushpin">
+        <Pair>
+            <key>normal</key>
+            <styleUrl>#sn_ylw-pushpin</styleUrl>
+        </Pair>
+        <Pair>
+            <key>highlight</key>
+            <styleUrl>#sh_ylw-pushpin</styleUrl>
+        </Pair>
+    </StyleMap>
+    <Style id="sn_ylw-pushpin">
+        <BalloonStyle>
+        </BalloonStyle>
+        <LineStyle>
+            <color>ff0000ff</color>
+        </LineStyle>
+        <PolyStyle>
+            <fill>0</fill>
+        </PolyStyle>
+    </Style>
+    <Style id="sh_ylw-pushpin">
+        <IconStyle>
+            <scale>1.2</scale>
+        </IconStyle>
+        <BalloonStyle>
+        </BalloonStyle>
+        <LineStyle>
+            <color>ff0000ff</color>
+        </LineStyle>
+        <PolyStyle>
+            <fill>0</fill>
+        </PolyStyle>
+    </Style>
+    <Placemark>
+        <name>RME_Test</name>
+        <styleUrl>#msn_ylw-pushpin</styleUrl>
+        <Polygon>
+            <tessellate>1</tessellate>
+            <outerBoundaryIs>
+                <LinearRing>
+                    <coordinates>
+                        -75.42181569424224,43.24896429093089,0 -75.42696151311205,43.24938750047817,0 -75.43043148463362,43.24664131226775,0 -75.42855902052428,43.2432695301437,0 -75.42485732616568,43.2424236354814,0 -75.42305838118557,43.23757284733156,0 -75.42038067328632,43.23567360652802,0 -75.4134274653908,43.23145128607393,0 -75.40640257031879,43.22817663792267,0 -75.39538666406096,43.22141710614181,0 -75.3908171158421,43.21849440631547,0 -75.38497785942779,43.21639548354221,0 -75.38254495626909,43.21875664344683,0 -75.38510711627839,43.2222663000613,0 -75.39441622461388,43.22935003040973,0 -75.39804127753395,43.22987010788658,0 -75.39890378773647,43.23141693772671,0 -75.39835208643623,43.23219608585955,0 -75.40902798090791,43.2384053735492,0 -75.42181569424224,43.24896429093089,0 
+                    </coordinates>
+                </LinearRing>
+            </outerBoundaryIs>
+        </Polygon>
+    </Placemark>
+</Document>
+</kml>
+        </textarea>
+    </div>
+        <p>
+            If you uploaded some bullhockey to see if you could break my program... f*** you.
+        </p>
+        <h3>
+            Click <a href="/">here</a> to go back
+        </h3>
+    </body>
+</html>

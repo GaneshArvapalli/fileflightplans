@@ -5,6 +5,6 @@ from . import views
 app_name = 'kml'
 urlpatterns = [
     path('', views.index, name='index'),
-    path('success', views.success, name='success')
+    path('properformat', views.properformat, name='properformat')
 ]
 

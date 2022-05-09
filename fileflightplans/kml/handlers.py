@@ -30,9 +30,12 @@ def handle_uploaded_file(f, data):
         k.from_string(doc)
 
     # Get the boundary geometry
-    features = list(k.features())
-    f2 = list(features[0].features())
-    red_bounds = f2[0].geometry
+    try:
+        features = list(k.features())
+        f2 = list(features[0].features())
+        red_bounds = f2[0].geometry
+    except:
+        raise Exception("File was not handled correctly. Please go back and try again.")
 
     logger.info("RED")
     # Reproject to meter space
@@ -56,7 +59,7 @@ def handle_uploaded_file(f, data):
     # green_line = meter_polygon.exterior.parallel_offset(distance=-80, side='left')
     # green = Polygon(green_line)
 
-    print("YELLOW")
+    # print("YELLOW")
     transformer = Transformer.from_crs("epsg:3857", "epsg:4326")
     x, y = yellow.exterior.coords.xy
     yellow_ge_points = []
@@ -86,8 +89,8 @@ def handle_uploaded_file(f, data):
     ns = '{http://www.opengis.net/kml/2.2}'
     d = kml.Document(ns, 'RRA_Test_2.kml')
     k.append(d)
-    f = kml.Folder(ns=ns, name='Bounds')
-    d.append(f)
+    # f = kml.Folder(ns=ns, name='Bounds')
+    # d.append(f)
 
     ls = styles.LineStyle(ns, color='ff0000ff', width=4)
     ps = styles.PolyStyle(ns, fill=0)
@@ -107,9 +110,9 @@ def handle_uploaded_file(f, data):
     gp = kml.Placemark(ns=ns, name='Green Bounds', styles=[s])
     gp.geometry = green_ge_polygon
 
-    f.append(rp)
-    f.append(yp)
-    f.append(gp)
+    d.append(rp)
+    d.append(yp)
+    d.append(gp)
 
     return k.to_string(prettyprint=True)
     # with open(outfile, 'w', encoding="utf-8") as myfile:
