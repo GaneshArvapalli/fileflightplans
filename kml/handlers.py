@@ -12,14 +12,7 @@ logger = logging.getLogger(__name__)
 # Main KML modification
 
 def handle_uploaded_file(f, data):
-    # with open('some/file/name.txt', 'wb+') as destination:
-    #     for chunk in f.chunks():
-    #         destination.write(chunk)
-
-    # Read in KML file
-    # kml_file = f
-
-    # The +7.7 comes from accounting for wind
+    # The +7.7 comes from accounting for 15 kts wind
     max_speed = data['max_speed'] # + 7.716667 
 
     logger.info(max_speed)

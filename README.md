@@ -1,5 +1,7 @@
 # fileflightplans
 
+https://fileflightplans.herokuapp.com/kml/
+
 ## Introduction
 
 This is a preliminary website for creation and downloading of flight-plan related files. 
@@ -58,7 +60,12 @@ python draw_kml.py -v
 
 ### Long-term Goals
 
+- Create fixed-wing KML generator
 - Create data model
 - Create form for full flight plan
 - Create admin interface for approval
 - Create tutorials
+
+### Bugs
+
+- Setting max_speed to be too high causes the KML output to be crazy

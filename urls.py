@@ -22,7 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('kml/', include('kml.urls')),    
+    path('kml/', include('kml.urls')),
+    path('flightplan/', include('flightplan.urls')),    
     path('', RedirectView.as_view(url='kml/', permanent=True))
 ]
 

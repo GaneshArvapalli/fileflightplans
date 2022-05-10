@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ysx=93j^qjf9jl$7so^uys(cnjdbh7*fa71z7iutq0x_p!%#!l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sleepy-bayou-05899.herokuapp.com', 'fileflightplans.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['sleepy-bayou-05899.herokuapp.com', 'fileflightplans.herokuapp.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'kml.apps.KmlConfig'
+    'kml.apps.KmlConfig',
+    'flightplan.apps.FlightplanConfig'
 ]
 
 MIDDLEWARE = [
@@ -153,6 +154,7 @@ STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR,  "kml", 'static'),
+    os.path.join(BASE_DIR,  "flightplan", 'static'),
 )
 
 #  Add configuration for static files storage using whitenoise
