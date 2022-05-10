@@ -6,13 +6,26 @@ from shapely.geometry import Point, LineString, Polygon
 from fastkml import kml, styles
 from pyproj import Proj, Transformer
 import pdb
+import sys
+import argparse
 
+parser = argparse.ArgumentParser(
+    usage="%(prog)s [FILE] [MAX_SPEED]",
+    description="Calculate green and yellow bounds for flight plan filing, given red bounds in a .kml file."
+)
+parser.add_argument(
+    "-v", "--version", action="version",
+    version = f"{parser.prog} version 0.1.0"
+)
+parser.add_argument('file', help="Name of .kml file")
+parser.add_argument('max_speed', type=float, help="Maximum speed of flight in meters per second")
+args = parser.parse_args()
 
 # Read in KML file
-kml_file = input("Which file do you want to use? ")
+kml_file = args.file
 
 # The +7.7 comes from accounting for wind
-max_speed = float(input("What speed will your vehicle be going in m/s? "))# + 7.716667 
+max_speed = float(args.max_speed) # + 7.716667 
 
 with open(kml_file, 'rt', encoding="utf-8") as myfile:
     doc=myfile.read()
@@ -21,9 +34,13 @@ with open(kml_file, 'rt', encoding="utf-8") as myfile:
 
 # Get the boundary geometry
 # pdb.set_trace()
-features = list(k.features())
-f2 = list(features[0].features())
-red_bounds = f2[0].geometry
+try:
+    features = list(k.features())
+    f2 = list(features[0].features())
+    red_bounds = f2[0].geometry
+except:
+    print("Error in parsing file!")
+    sys.exit(1)
 
 print("RED")
 # Reproject to meter space

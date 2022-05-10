@@ -1,0 +1,1 @@
+web: gunicorn fileflightplans.wsgi --log-file -
