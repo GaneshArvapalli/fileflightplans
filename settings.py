@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ysx=93j^qjf9jl$7so^uys(cnjdbh7*fa71z7iutq0x_p!%#!l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sleepy-bayou-05899.herokuapp.com', 'fileflightplans.herokuapp.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['fileflightplans.herokuapp.com', 'flightplans.herokuapp.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -162,3 +162,7 @@ STATICFILES_DIRS = (
 #  Add configuration for static files storage using whitenoise
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# Heroku: Update database configuration from $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
