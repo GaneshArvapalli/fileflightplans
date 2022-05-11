@@ -2,10 +2,6 @@
     font-family: 'Raleway', serif;
 }
 
-body {
-    background: black;
-}
-
 a, a:link, a:hover, a:active {
     color: rgb(212, 0, 255);
     text-align: center;

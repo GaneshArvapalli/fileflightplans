@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'kml.apps.KmlConfig',
-    'flightplan.apps.FlightplanConfig'
+    'flightplan.apps.FlightplanConfig',
+    'multiselectfield'
 ]
 
 MIDDLEWARE = [
@@ -153,6 +154,7 @@ STATIC_ROOT  =   os.path.join(BASE_DIR, 'staticfiles')
 
 # Extra lookup directories for collectstatic to find static files
 STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR,  "kml", 'static'),
     os.path.join(BASE_DIR,  "flightplan", 'static'),
 )

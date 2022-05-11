@@ -1,7 +1,6 @@
 from django import forms
 import os
 from django.core.exceptions import ValidationError
-from django.forms import Textarea
 from django.utils.translation import gettext_lazy as _
 
 from .models import FlightPlan
@@ -21,10 +20,12 @@ def validate_ppt_file_extension(value):
 class FlightPlanForm(forms.ModelForm):
     class Meta:
         model = FlightPlan
-        fields = ["pic", "vo", "tp", "drone_id", "max_speed", "max_altitude", "testcardfile", "hazardpatternfile", "kmlfile"]
+        fields = ["pic", "vo", "tp", "drone_id", "project_number", "part107compliant", "airspace", "restrictedairspace", "restrictedairspaceexplain",
+                    'waiver', 'waiverreason', "waivernumber", "waiverexpiration", "max_speed", "max_altitude", "duration", "testcardfile", "hazardpatternfile", "kmlfile", 
+                    "imagefile", "otherfile", "notes", "startdate", "enddate"]
         widgets = {
-            'tp': Textarea(attrs={'cols': 30, 'rows': 2}),
-        }
-        help_texts = {
-            'tp': _('Some useful help text.'),
+            'tp': forms.Textarea(attrs={'cols': 30, 'rows': 2}),
+            'restrictedairspaceexplain': forms.Textarea(attrs={'cols': 30, 'rows': 5}),
+            'notes': forms.Textarea(attrs={'cols': 30, 'rows': 5}),
+            'otherfile': forms.FileInput(attrs={'multiple': True, 'required': False})
         }

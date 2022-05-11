@@ -65,6 +65,7 @@ python draw_kml.py -v
 - Create form for full flight plan
 - Create admin interface for approval
 - Create tutorials
+- Custom 404/500 pages
 
 ### Bugs
 

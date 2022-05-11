@@ -2,7 +2,7 @@
     <head>
         <title>File Flight Plans</title>
         {% load static %}
-
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
         <link rel="stylesheet" type="text/css" href="{% static 'flightplan/style.css' %}">
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Raleway">
@@ -11,6 +11,82 @@
             integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
             crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            $(document).ready(function() {
+                let airspacefield = $('#id_airspace').parents('tr');
+                airspacefield.hide();
+                let restrictairspacefield = $('#id_restrictedairspace').parents('tr');
+                restrictairspacefield.hide();
+                let airspacefieldexplain = $('#id_restrictedairspaceexplain').parents('tr');
+                airspacefieldexplain.hide();                
+                let waiverfield = $('#id_waiver').parents('tr');
+                waiverfield.hide();
+                let waiverfieldreason = $('#id_waiverreason').parents('tr');
+                waiverfieldreason.hide();
+                let waiverfieldnumber = $('#id_waivernumber').parents('tr');
+                waiverfieldnumber.hide();
+                let waiverfielddate = $('#id_waiverexpiration').parents('tr');
+                waiverfielddate.hide();
+                $('#id_part107compliant')[0].addEventListener('change', (event) => {
+                    if (!event.target.checked) {
+                        airspacefield.show();
+                        restrictairspacefield.show();
+                        if ($('#id_restrictedairspace')[0].checked) {
+                            airspacefieldexplain.show();
+                        }
+                        waiverfield.show()
+                        if ($('#id_waiver')[0].checked) {
+                            waiverfieldreason.show();
+                            waiverfieldnumber.show();
+                            waiverfielddate.show();
+                        }
+                    } else {
+                        // Reset and hide everything
+                        let classlist = $('div#id_airspace').find(':input');
+                        for(i = 0; i < classlist.length; i++) {
+                            classlist[i].checked = false;
+                        }
+                        airspacefield.hide();
+                        airspacefieldexplain.hide();
+                        restrictairspacefield.hide();
+                        airspacefieldexplain.hide(); 
+                        waiverfield.hide();
+                        waiverfieldreason.hide();
+                        waiverfieldnumber.hide();
+                        waiverfielddate.hide();
+                        $('#id_restrictedairspace')[0].checked = false;
+                        $('#id_waiver')[0].checked = false;
+                        $('textarea#id_restrictedairspaceexplain').val("");
+                        $('input#id_waivernumber').val("");
+                        $('input#id_waiverexpiration').val("");
+                    }
+                })
+                $('#id_restrictedairspace')[0].addEventListener('change', (event) => {
+                    if (event.target.checked) {
+                        airspacefieldexplain.show();
+                    } else {
+                        airspacefieldexplain.hide();
+                        $('textarea#id_restrictedairspaceexplain').val("");
+                    }
+                })
+                $('#id_waiver')[0].addEventListener('change', (event) => {
+                    if (event.target.checked) {
+                        waiverfieldreason.show();
+                        waiverfieldnumber.show();
+                        waiverfielddate.show();
+                    } else {
+                        waiverfieldreason.hide();
+                        waiverfieldnumber.hide();
+                        waiverfielddate.hide();
+                        $('input#id_waivernumber').val("");
+                        $('input#id_waiverexpiration').val("");
+                    }
+                })
+                $('#clearbutton').click(function() {
+                    $("input#id_otherfile").val(null);
+                })
+            });
+        </script>
     </head>
     <body>
         <h1>
@@ -27,5 +103,7 @@
             </div>
         </form>
         {% endblock %}
+        <p>Use the button below to clear the files uploaded in the "Other files" section</p>
+        <button class="btn btn-secondary col-md-2 offset-md-5" id="clearbutton">Clear Other Files</button>
     </body>
 </html>
