@@ -15,11 +15,8 @@ def index(request):
         form = FlightPlanForm(request.POST, request.FILES)
         if form.is_valid():
             strdata = ""
-            try:
-                fp = form.save()
-                strdata = handle_flight_plan(fp)
-            except:
-                return render(request, 'kml/properformat.html')
+            fp = form.save()
+            strdata = handle_flight_plan(fp)
             outfile = datetime.datetime.now().strftime("%Y-%m-%d_%H%M%S") + "_flightplan_fields.txt"
             response = HttpResponse(strdata, content_type="application/text")
             response['Content-Disposition'] = "attachment; filename=%s" % outfile
