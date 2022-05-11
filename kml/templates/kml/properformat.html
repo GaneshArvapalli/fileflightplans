@@ -3,7 +3,7 @@
         <title>File Flight Plans - Proper Formatting</title>
         {% load static %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'kml/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'flightplan_style.css' %}">
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" 
@@ -13,8 +13,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
+        <div class="container col-md-12">
         <h1>
-            <a href="/">File Flight Plans... Properly!</a>
+            <a href="/">Create KMLs... Properly!</a>
         </h1>
         <p>
             Hey! If you're seeing this, it means that you probably messed up your KML file somehow.
@@ -22,7 +23,7 @@
         <p>
             It should look something like this:
         </p>
-        <div class="ta-center">
+        <div class="container ta-center">
         <textarea rows="20" cols="70">
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
@@ -78,9 +79,11 @@
 </Document>
 </kml>
         </textarea>
-    </div>
+    </div class="container col-md-12">
         <h3>
-            Click <a href="/">here</a> to go back
+            Click <a href="/kml">here</a> to go back!
         </h3>
+        <footer class="text-center">Made with <3 by <a href="https://github.com/GaneshArvapalli/" target="_blank">Ganesh Arvapalli</a>.</footer>
+    </div>
     </body>
 </html>

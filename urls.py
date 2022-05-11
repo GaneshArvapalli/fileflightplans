@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('kml/', include('kml.urls')),
     path('flightplan/', include('flightplan.urls')),    
-    path('', RedirectView.as_view(url='kml/', permanent=True))
+    path('', RedirectView.as_view(url='flightplan/'))
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

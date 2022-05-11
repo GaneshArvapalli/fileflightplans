@@ -2,8 +2,9 @@
     font-family: 'Raleway', serif;
 }
 
-body {
+.container {
     background: black;
+    width: 100%;
 }
 
 a, a:link, a:hover, a:active {
@@ -12,32 +13,39 @@ a, a:link, a:hover, a:active {
 }
 
 h1 {
-    padding-top: 2em;
+    padding-top: 1em;
     font-size: 60px;
     color: rgb(212, 0, 255);
     text-align: center;
+    background-color: black;
 }
 
 p, h3 {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    /* padding-left: auto;
+    padding-right: auto; */
+    background-color: black;
+    color: white;
 }
 
 .ta-center {
     display: flex;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    /* padding-left: auto;
+    padding-right: auto; */
 }
 
 table {
-    margin-left: auto;
-    margin-right: auto;
+    /* padding-left: auto;
+    padding-right: auto; */
+    background-color: black;
 }
 
-td {
+th, td {
     padding: 10px;
+    text-align: center;
+    border: 1px solid #ffffff;
+    color: white;
 }
 
 form, table {
@@ -52,4 +60,10 @@ img {
     max-height: 300px;
     width: 100%;
     object-fit: contain;
+}
+
+footer {
+    text-align: center;
+    color: rgb(212, 0, 255);
+    padding: 10px;
 }

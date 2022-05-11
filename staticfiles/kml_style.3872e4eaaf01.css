@@ -2,7 +2,7 @@
     font-family: 'Raleway', serif;
 }
 
-body {
+.container {
     background: black;
 }
 
@@ -16,12 +16,15 @@ h1 {
     font-size: 60px;
     color: rgb(212, 0, 255);
     text-align: center;
+    background: black;
 }
 
 p, h3 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    background: black;
 }
 
 .ta-center {
@@ -44,7 +47,7 @@ form, table {
     text-align: center;
 }
 
-.example {
+.example, .btn {
     padding-top: 2em;
 }
 

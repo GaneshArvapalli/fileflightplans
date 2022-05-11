@@ -3,7 +3,7 @@
         <title>File Flight Plans</title>
         {% load static %}
         <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
-        <link rel="stylesheet" type="text/css" href="{% static 'flightplan/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'flightplan_style.css' %}">
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" 
@@ -89,21 +89,33 @@
         </script>
     </head>
     <body>
-        <h1>
-            File Flight Plans!
-        </h1>
-        {% block content %}
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-group">
-                <table>
-                    {{ form.as_table }}
-                </table>
-                <input class="btn btn-primary" type="submit" value="Submit Flight Plan">
+        <div class="container col-md-12">
+            <h1>
+                File Flight Plans!
+            </h1>
+            <h3>
+                ... or generate KML files <a href="/kml">here</a>!
+            </h3>
+            {% block content %}
+            <div class="container">
+                <form class="container col-md-8" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-responsive">
+                            {{ form.as_table }}
+                        </table>
+                        <input class="btn btn-primary" type="submit" value="Submit Flight Plan">
+                    </div>
+                </form>
             </div>
-        </form>
-        {% endblock %}
-        <p>Use the button below to clear the files uploaded in the "Other files" section</p>
-        <button class="btn btn-secondary col-md-2 offset-md-5" id="clearbutton">Clear Other Files</button>
+            {% endblock %}
+            <div class="container col-md-12">
+                <p>Use the button below to clear the files uploaded in the "Other files" section</p>
+                <button class="btn btn-secondary col-md-2 offset-md-5" id="clearbutton">Clear Other Files</button>
+            </div>
+        </div>
+        <div class="container col-md-12">
+            <footer class="text-center">Made with <3 by <a href="https://github.com/GaneshArvapalli/" target="_blank">Ganesh Arvapalli</a>.</footer>
+        </div>
     </body>
 </html>

@@ -3,7 +3,7 @@
         <title>File Flight Plans</title>
         {% load static %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'kml/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'flightplan_style.css' %}">
         <link rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Raleway">
         <link rel="stylesheet" 
@@ -13,41 +13,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <h1>
-            File Flight Plans!
-        </h1>
-        <p>
-            Upload a .kml <a href="https://support.google.com/fusiontables/answer/171215?hl=en" target="_blank">file</a> with just the red bounds <a href="https://support.google.com/earth/answer/148072?hl=en" target="_blank">drawn</a>.
-        </p>
-        <p>
-            I'll give you a new .kml with the red bounds PLUS green and yellow based on your max flight speed.
-        </p>
-        <p>
-            Currently, only quadcopters are supported, but I plan to add fixed-wing.
-        </p>
-        <p>
-            <a href='properformat'>(Formatting guidelines...)</a>
-        </p>
-        {% block content %}
-        <form action="" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            <div class="form-group">
-                <table>
-                    {{ form.as_table }}
-                </table>
-                <input class="btn btn-primary" type="submit" value="Download New .kml">
-            </div>
-        </form>
-        <div class="example container">
-            <div class="row">
-                <div class="col">
-                    <img class="img-fluid" src="{% static 'kml/img/before.png' %}" alt="Before Image"/>
+        <div class="container col-md-12">
+            <h1>
+                Create KMLs!
+            </h1>
+            <p>
+                Upload a .kml <a href="https://support.google.com/fusiontables/answer/171215?hl=en" target="_blank">file</a> with just the red bounds <a href="https://support.google.com/earth/answer/148072?hl=en" target="_blank">drawn</a>.
+            </p>
+            <p>
+                I'll give you a new .kml with the red bounds PLUS green and yellow based on your max flight speed.
+            </p>
+            <p>
+                Currently, only quadcopters are supported, but I plan to add fixed-wing.
+            </p>
+            <p>
+                <a href='properformat'>(Formatting guidelines...)</a>
+            </p>
+            {% block content %}
+            <div class="container">
+                <form class="container col-md-6 offset-md-3" action="" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <table class="table table-responsive">
+                            {{ form.as_table }}
+                        </table>
+                        <input class="btn btn-primary" type="submit" value="Download New .kml">
+                    </div>
+                </form>
+            </div>        
+            <h3>
+                Click <a href="/flightplan">here</a> to go back!
+            </h3>
+            <div class="example container">
+                <div class="row">
+                    <div class="col">
+                        <img class="img-fluid" src="{% static 'img/before.png' %}" alt="Before Image"/>
+                    </div>
+                    <div class="col">
+                        <img class="img-fluid" src="{% static 'img/after.png' %}" alt="After Image"/>
+                    </div>
                 </div>
-                <div class="col">
-                    <img class="img-fluid" src="{% static 'kml/img/after.png' %}" alt="After Image"/>
-                </div>
             </div>
+            {% endblock %}
         </div>
-        {% endblock %}
+        <div class="container col-md-12">
+            <footer class="text-center">Made with <3 by <a href="https://github.com/GaneshArvapalli/" target="_blank">Ganesh Arvapalli</a>.</footer>
+        </div>
     </body>
 </html>

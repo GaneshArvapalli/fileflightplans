@@ -69,4 +69,5 @@ python draw_kml.py -v
 
 ### Bugs
 
-- Setting max_speed to be too high causes the KML output to be crazy
+- Setting max_speed to be too high causes the KML output to be crazy. Currently just sends you to a formatting help page
+- Sometimes you just have to delete all files under `migrations/` (but not `__init__.py`) and start from scratch
