@@ -4,9 +4,11 @@ from django.template import loader
 from django.shortcuts import render, get_object_or_404
 from wsgiref.util import FileWrapper
 import datetime
-
+import logging
 from .forms import FlightPlanForm
 from .handlers import handle_flight_plan
+
+logger = logging.getLogger(__name__)
 
 def index(request):
     if request.method == 'POST':
