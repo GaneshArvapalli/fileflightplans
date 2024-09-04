@@ -1,6 +1,6 @@
 # fileflightplans
 
-https://fileflightplans.herokuapp.com/kml/
+Given that the infrastructure related to what this service performed is no longer being maintained, I feel ok about open-sourcing this. It was mostly an exploratory project to test out Django.
 
 ## Introduction
 
